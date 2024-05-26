@@ -3,6 +3,8 @@ global $pdo;
 require 'confi.php';
 require 'Usuario.php';
 $usario = new Usuario($pdo);
+
+
 ?>
 <html lang="pt-br">
 <head>
@@ -22,21 +24,31 @@ $usario = new Usuario($pdo);
                 <h1>Cadastro</h1>
                 <form action="cadastro.php" method="POST">
             <div class="textfield">
-                <label for="Usuario">Usuário</label>
-                <input type="text" placeholder="Usuário" name="Id" required>
+                <label for="nome">Usuário</label>
+                <input type="text" placeholder="Usuário" name="nome" id="nome" required>
             </div>
             <div class="textfield">
-                <label for="Email">Email</label>
-                <input type="email" placeholder="Email" name="Email" required>
+                <label for="email">Email</label>
+                <input type="email" placeholder="Email" name="email"  id="email" required>
             </div>
             <div class="textfield">
-                <label for="Senha">Senha</label>
-                <input type="password" placeholder="Senha" name="Senha" required>
+                <label for="senha">Senha</label>
+                <input type="password" placeholder="Senha" name="senha" id="senha" required>
             </div>
                   <input type="submit" value="Cadstre-se" class="button">
             <div>
-                <input type="submit" value="Ver lista" class="button">
+                <input type="submit" value="Ver lista" class="button"
+                   <?php
+                   $lista = $usuario->listarTodos($nome , $email , $senha);
+echo "Listando ".PHP_EOL;
+echo "==================================".PHP_EOL;
+print_r($lista);
+                   ?>>
             </div>
+                  <div>
+                      <a href="Deletar.php">Deletar</a><br>
+                      <a href="Atualizar.php">Atualizar</a>
+                  </div>
                 </form> <br>
         </div>
     </div>

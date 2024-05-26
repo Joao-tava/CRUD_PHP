@@ -1,4 +1,5 @@
 <?php
+/*
 $servidor="localhost";
 $dbname="banco_aula";
 $user = "root";
@@ -9,9 +10,7 @@ try{
 } catch (Exception $ex) {
 echo "Erro ao conectar com o banco de dados" . $ex->getMenssage();
 }
-/*
- * <?php
-
+*/
 
 $dbFile = 'banco_aula.sqlite'; // Nome do arquivo do banco de dados
 
@@ -24,4 +23,4 @@ try {
     echo "Erro ao conectar com o banco de dados SQLite3: " . $e->getMessage() . "\n";
     die();
 }
- */        
+        

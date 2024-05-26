@@ -49,11 +49,11 @@ class Usuarios
         return $stmt->rowCount();
     }
 
-    public function excluir($id)
+    public function excluir($id,$nome)
     {
-        $sql = "DELETE FROM usuarios WHERE id = :id";
+        $sql = "DELETE FROM usuarios WHERE nome = :nome";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':nome', $id, PDO::PARAM_INT);
         $stmt->execute();
 
         return $stmt->rowCount();

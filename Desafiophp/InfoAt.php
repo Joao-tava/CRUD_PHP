@@ -13,24 +13,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         "email"=> $email , 
         "senha"=> $senha 
     ];
-    $novo = $usuario->inserir($dados);
-
+    $atualizar  = $usuario->atualizar();
+    echo "Usuário atualizado com sucesso!";
 }
-/*
-//Mostrar dados 
-elseif($_){
-    $lista = usuario->listarTodos($nome , $email , $senha);
-
-}
-//Atualizar os dados
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'] ;
-$atualizar = usuario->atualizar();
-}
-
-//Excluir os dados 
-else(){
-$delete = usuario->excluir();
+else{
+    echo "Algo deu Errado";
 }

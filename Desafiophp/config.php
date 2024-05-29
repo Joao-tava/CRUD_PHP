@@ -1,10 +1,10 @@
 <?php
-/*
+
 $servidor="localhost";
 $dbname="banco_aula";
 $user = "root";
 $password = "";
-
+/*
 try{
     $conn = new PDO("mysql:host=$servidor;$dbname=$dename",$user,$password);
 } catch (Exception $ex) {
